@@ -18,7 +18,8 @@ public class OI {
 	public final int LEFT_JOYSTICK = 0;
 	public final int RIGHT_JOYSTICK = 1;
 	
-	public final int ENGAGE_SHIFTER = 1; //trigger
+	public final int ENGAGE_SHIFTER_BUTTON = 1; //trigger
+	public boolean gearShiftOn = false;
 	
 	public final double JOYSTICK_DEADBAND = 0.15;
 	

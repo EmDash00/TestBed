@@ -31,7 +31,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static RobotMap robotmap;
 
-	Command autonomousCommands;
+	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
 	/**

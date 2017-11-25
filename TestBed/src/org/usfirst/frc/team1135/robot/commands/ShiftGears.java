@@ -18,11 +18,16 @@ public class ShiftGears extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.gearshifters.InitializeGearShifters();
+    	Robot.oi.gearShiftOn = false;
+    	Robot.gearshifters.SolenoidForward(true);
     
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    
+    	final boolean solenoidState = Robot.oi.GetButton(Robot.oi.LEFT_JOYSTICK, Robot.oi.ENGAGE_SHIFTER_BUTTON);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
