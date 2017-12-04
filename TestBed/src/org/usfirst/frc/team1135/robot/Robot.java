@@ -14,7 +14,7 @@ import org.usfirst.frc.team1135.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team1135.robot.commands.ShiftGears;
 import org.usfirst.frc.team1135.robot.subsystems.Gearshifters;
 import org.usfirst.frc.team1135.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team1135.robot.commands.DriveJ;
+//import org.usfirst.frc.team1135.robot.commands.DriveJ;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,10 +24,10 @@ import org.usfirst.frc.team1135.robot.commands.DriveJ;
  * directory.
  */
 public class Robot extends IterativeRobot {
-
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static final Gearshifters gearshifters = new Gearshifters();
-	public static final DriveTrain drivetrain = new DriveTrain();
+	
+	public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static Gearshifters gearshifters;
+	public static DriveTrain drivetrain;
 	public static OI oi;
 	public static RobotMap robotmap;
 
@@ -40,10 +40,16 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		oi = new OI();
+
+		gearshifters = Gearshifters.getInstance();
+		drivetrain = DriveTrain.getInstance();
+		
+	
 		chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
+		
+		oi = OI.getInstance();
 	}
 
 	/**

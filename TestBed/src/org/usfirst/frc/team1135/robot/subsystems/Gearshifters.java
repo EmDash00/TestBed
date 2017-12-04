@@ -3,22 +3,41 @@ package org.usfirst.frc.team1135.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Compressor;
+import org.usfirst.frc.team1135.robot.RobotMap;
+
+import org.usfirst.frc.team1135.robot.commands.StopShift;
 import org.usfirst.frc.team1135.robot.commands.ShiftGears;
-import org.usfirst.frc.team1135.robot.Robot;
+import org.usfirst.frc.team1135.robot.commands.UnshiftGears;
 
 
-/**
- *
- */
-public class Gearshifters extends Subsystem {
+public class Gearshifters extends Subsystem implements RobotMap {
 
-final DoubleSolenoid rightSolenoid = new DoubleSolenoid(Robot.robotmap.RIGHT_SOLENOID_ENGAGE, Robot.robotmap.RIGHT_SOLENOID_DISENGAGE);
-final DoubleSolenoid leftSolenoid = new DoubleSolenoid(Robot.robotmap.LEFT_SOLENOID_ENGAGE, Robot.robotmap.LEFT_SOLENOID_DISENGAGE);
-final Compressor compressor = new Compressor(0);
+private DoubleSolenoid rightSolenoid, leftSolenoid;
+private Compressor compressor;
 
+private static Gearshifters instance;
 
-public void InitializeGearShifters()
+public void initDefaultCommand() {
+	
+	setDefaultCommand(new StopShift());
+        // Set the default command for a subsystem here.
+        //setDefaultCommand(new MySpecialCommand());
+    }
+
+public static Gearshifters getInstance()
 {
+	if (instance == null)
+	{
+		instance = new Gearshifters();
+	}
+	return instance;
+}
+
+private Gearshifters()
+{
+	rightSolenoid = new DoubleSolenoid(RIGHT_SOLENOID_ENGAGE, RIGHT_SOLENOID_DISENGAGE);
+	leftSolenoid = new DoubleSolenoid(LEFT_SOLENOID_ENGAGE, LEFT_SOLENOID_DISENGAGE);
+	compressor = new Compressor(0);
 	compressor.setClosedLoopControl(true);
 	rightSolenoid.set(DoubleSolenoid.Value.kOff);
 	leftSolenoid.set(DoubleSolenoid.Value.kOff);
@@ -57,10 +76,6 @@ public void SolenoidOff()
 	leftSolenoid.set(DoubleSolenoid.Value.kOff);
 }
 
-public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
-    }
-}
 
+}
 

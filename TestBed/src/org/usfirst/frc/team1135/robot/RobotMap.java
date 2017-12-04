@@ -6,26 +6,22 @@ package org.usfirst.frc.team1135.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-public class RobotMap {
+public interface RobotMap {
 	
-	static public class motors
-	{
-		
-	}
-	final public int REAR_RIGHT_TALON_ID = 11;
-	final public int REAR_LEFT_TALON_ID = 12;
-	final public int FRONT_RIGHT_TALON_ID = 13;
-	final public int FRONT_LEFT_TALON_ID = 14;
+	final static public int REAR_RIGHT_TALON_ID = 13;
+	final static public int REAR_LEFT_TALON_ID = 11;
+	final static public int FRONT_RIGHT_TALON_ID = 14;
+	final static public int FRONT_LEFT_TALON_ID = 13;
 	
-	final public int LEFT_SOLENOID_ENGAGE = 1;
-	final public int RIGHT_SOLENOID_ENGAGE =3;
-	final public int LEFT_SOLENOID_DISENGAGE = 2;
-	final public int RIGHT_SOLENOID_DISENGAGE = 4;
+	final static public int LEFT_SOLENOID_ENGAGE = 3;
+	final static public int RIGHT_SOLENOID_ENGAGE = 0;
+	final static public int LEFT_SOLENOID_DISENGAGE = 2;
+	final static public int RIGHT_SOLENOID_DISENGAGE = 1;
 
-	final public int PNEUMATICS_CONTROL_MODULE_ID = 0;
-	final public int POWER_DISTRIBUTION_PANEL_ID = 0;
+	final static public int PNEUMATICS_CONTROL_MODULE_ID = 0;
+	final static public int POWER_DISTRIBUTION_PANEL_ID = 0;
 	
-	final public boolean RIGHT_SIDE_INVERTED = true;
-	final public boolean LEFT_SIDE_INVERTED = false;
+	final static public boolean RIGHT_SIDE_INVERTED = true;
+	final static public boolean LEFT_SIDE_INVERTED = false;
 	
 }
