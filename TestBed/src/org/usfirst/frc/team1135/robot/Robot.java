@@ -2,6 +2,7 @@
 package org.usfirst.frc.team1135.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -14,7 +15,10 @@ import org.usfirst.frc.team1135.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team1135.robot.commands.ShiftGears;
 import org.usfirst.frc.team1135.robot.subsystems.Gearshifters;
 import org.usfirst.frc.team1135.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team1135.robot.subsystems.NavX;
 //import org.usfirst.frc.team1135.robot.commands.DriveJ;
+
+import com.kauailabs.navx.frc.AHRS;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,6 +34,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain drivetrain;
 	public static OI oi;
 	public static RobotMap robotmap;
+	public static NavX navx;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -43,12 +48,12 @@ public class Robot extends IterativeRobot {
 
 		gearshifters = Gearshifters.getInstance();
 		drivetrain = DriveTrain.getInstance();
+		 navx = new NavX();
 		
-	
 		chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-		
+		System.out.println(
 		oi = OI.getInstance();
 	}
 
