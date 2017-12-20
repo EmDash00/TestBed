@@ -8,10 +8,10 @@ package org.usfirst.frc.team1135.robot;
  */
 public interface RobotMap {
 	
-	final static public int REAR_RIGHT_TALON_ID = 13;
-	final static public int REAR_LEFT_TALON_ID = 11;
-	final static public int FRONT_RIGHT_TALON_ID = 14;
-	final static public int FRONT_LEFT_TALON_ID = 13;
+	final static public int REAR_RIGHT_TALON_ID = 14;
+	final static public int REAR_LEFT_TALON_ID = 12;
+	final static public int FRONT_RIGHT_TALON_ID = 13;
+	final static public int FRONT_LEFT_TALON_ID = 11;
 	
 	final static public int LEFT_SOLENOID_ENGAGE = 3;
 	final static public int RIGHT_SOLENOID_ENGAGE = 0;

@@ -13,6 +13,7 @@ import org.usfirst.frc.team1135.robot.commands.UnshiftGears;
 public class Gearshifters extends Subsystem implements RobotMap {
 
 private DoubleSolenoid rightSolenoid, leftSolenoid;
+
 private Compressor compressor;
 
 private static Gearshifters instance;

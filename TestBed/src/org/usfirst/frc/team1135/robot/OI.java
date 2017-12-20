@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import java.lang.Math;
 
+import org.usfirst.frc.team1135.robot.commands.DriveStraight;
 //import org.usfirst.frc.team1135.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1135.robot.commands.ShiftGears;
 import org.usfirst.frc.team1135.robot.commands.StopShift;
@@ -32,6 +33,8 @@ public class OI {
 	
 	Joystick RIGHT, LEFT, MANIP;
 	JoystickButton ENGAGE, DISENGAGE, ZERO;
+	
+	JoystickButton DRIVE_STRAIGHT;
 	
 	public static OI instance;
 	
@@ -98,6 +101,8 @@ public double GetRightJoystickY()
 {
 	double value = SetThreshold(RIGHT.getY());
 	return value;
+
+	
 }
 
 public void ConfigureButtonMapping()
@@ -105,11 +110,13 @@ public void ConfigureButtonMapping()
 	ENGAGE = new JoystickButton(MANIP, 7);
 	DISENGAGE = new JoystickButton(MANIP, 8);
 	ZERO = new JoystickButton(MANIP, 10);
+	DRIVE_STRAIGHT = new JoystickButton(RIGHT, 5);
 	AssignButtons();
 }
 
 public void AssignButtons()
 {
+	DRIVE_STRAIGHT.whileHeld(new DriveStraight());
 	DISENGAGE.whenPressed(new UnshiftGears());
 	ENGAGE.whenPressed(new ShiftGears());
 	ZERO.whenPressed(new StopShift());

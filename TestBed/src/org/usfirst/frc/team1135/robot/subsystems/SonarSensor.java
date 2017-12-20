@@ -1,11 +1,8 @@
-package org.usfirst.frc.team1135.robot.subsystems;
+/*package org.usfirst.frc.team1135.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import java.lang.*;
 
-/**
- *
- */
 public class SonarSensor extends Subsystem {
 
   static final int SONAR_PING_PORT = 9;
@@ -21,3 +18,4 @@ public class SonarSensor extends Subsystem {
     }
 }
 
+*/
