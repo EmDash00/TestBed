@@ -128,7 +128,8 @@ public void InitailzeEncoders()
 
 public double getEncoderValue(int side)
 {
-	return ((drivetrainMotors[side].getSelectedSensorPosition() / 1024) * ((side == LEFT_ENCODER) ? LEFT_ENCODER_REVERSED : RIGHT_ENCODER_REVERSED));
+	return ((drivetrainMotors[side].getSelectedSensorPosition() / 1024) * 
+		((side == LEFT_ENCODER) ? LEFT_ENCODER_REVERSED : RIGHT_ENCODER_REVERSED));
 }
 
 public void resetEncoderValue(int side)
