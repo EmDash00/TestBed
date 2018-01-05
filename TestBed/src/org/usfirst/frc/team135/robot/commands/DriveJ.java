@@ -4,16 +4,20 @@ import org.usfirst.frc.team135.robot.OI;
 import org.usfirst.frc.team135.robot.Robot;
 import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
 
+import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
 public class DriveJ extends Command {
 
+	PIDController controller;
+	
     public DriveJ() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.drivetrain);
+    	controller = new PIDController(0, 0, 0, , );
     	
     }
 

@@ -16,6 +16,7 @@ import org.usfirst.frc.team135.robot.commands.ShiftGears;
 import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team135.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team135.robot.subsystems.Gearshifters;
+import org.usfirst.frc.team135.robot.subsystems.Gyro;
 import org.usfirst.frc.team135.robot.subsystems.UltrasonicSensor;
 
 //import com.kauailabs.navx.frc.AHRS;
@@ -35,6 +36,7 @@ public class Robot extends TimedRobot {
 	public static OI oi;
 //	public static NavX navx;
 	public static UltrasonicSensor sonar;
+	public static Gyro gyro;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -48,6 +50,7 @@ public class Robot extends TimedRobot {
 
 		gearshifters = Gearshifters.getInstance();
 		drivetrain = DriveTrain.getInstance();
+		gyro = Gyro.getInstance();
 		// navx = new NavX();
 		
 		chooser.addDefault("Default Auto", new ExampleCommand());
