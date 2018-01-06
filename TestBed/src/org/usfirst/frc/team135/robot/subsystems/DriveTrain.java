@@ -120,6 +120,11 @@ public class DriveTrain extends Subsystem implements RobotMap {
 		chassis.tankDrive(left, right);
 	}
 	
+	public void ArcadeDrive(double power, double angle)
+	{
+		chassis.arcadeDrive(power, angle);
+	}
+	
 	public PIDTalonSRX getEncoderSource(int encoder, PIDSourceType type)
 	{
 		return new PIDTalonSRX(drivetrainMotors[encoder], DEFAULT_SENSOR_INDEX, type);

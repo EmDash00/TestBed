@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team135.robot.commands.ExampleCommand;
 import org.usfirst.frc.team135.robot.commands.ShiftGears;
+import org.usfirst.frc.team135.robot.subsystems.Camera;
 import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team135.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team135.robot.subsystems.Gearshifters;
@@ -37,6 +38,7 @@ public class Robot extends TimedRobot {
 //	public static NavX navx;
 	public static UltrasonicSensor sonar;
 	public static Gyro gyro;
+	public static Camera camera;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -58,6 +60,7 @@ public class Robot extends TimedRobot {
 		SmartDashboard.putData("Auto mode", chooser);
 
 		oi = OI.getInstance();
+		//camera = camera.getInstance();
 	}
 
 	/**

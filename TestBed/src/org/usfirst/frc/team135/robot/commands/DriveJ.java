@@ -11,13 +11,12 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveJ extends Command {
 
-	PIDController controller;
 	
     public DriveJ() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.drivetrain);
-    	controller = new PIDController(0, 0, 0, , );
+    	
     	
     }
 
