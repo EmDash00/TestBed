@@ -115,7 +115,7 @@ public void ConfigureButtonMapping()
 
 public void AssignButtons()
 {
-	DRIVE_STRAIGHT.whileHeld(new DriveStraight());
+	//DRIVE_STRAIGHT.whileHeld(new DriveStraight());
 	DISENGAGE.whenPressed(new UnshiftGears());
 	ENGAGE.whenPressed(new ShiftGears());
 	ZERO.whenPressed(new StopShift());

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team135.robot.wrappers;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.PIDSourceType;
@@ -9,10 +10,10 @@ public class PIDTalonSRX implements PIDSource {
 
 	private PIDSourceType m_pidSource = PIDSourceType.kDisplacement;
 	
-	private TalonSRX talon;
+	private WPI_TalonSRX talon;
 	private int  sensorIdx;
 	
-	public PIDTalonSRX(TalonSRX talon, int sensorIdx, PIDSourceType sourceType) {
+	public PIDTalonSRX(WPI_TalonSRX talon, int sensorIdx, PIDSourceType sourceType) {
 		this.talon = talon;
 		this.sensorIdx = sensorIdx;
 		m_pidSource = sourceType;

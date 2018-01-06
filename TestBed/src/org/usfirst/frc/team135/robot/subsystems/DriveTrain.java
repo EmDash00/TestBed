@@ -8,13 +8,14 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import org.usfirst.frc.team135.robot.RobotMap;
 import org.usfirst.frc.team135.robot.commands.DriveJ;
 import org.usfirst.frc.team135.robot.wrappers.PIDTalonSRX;
+import org.usfirst.frc.team135.robot.wrappers.PIDTalonSRX;
 
 import edu.wpi.first.wpilibj.*;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 
 /**
@@ -36,7 +37,7 @@ public class DriveTrain extends Subsystem implements RobotMap {
 	private static final boolean[] ENCODER_REVERSED = {true, true};
 	
 	
-	private static TalonSRX[] drivetrainMotors;
+	private static WPI_TalonSRX[] drivetrainMotors;
 	
 	private static final int ENCODER2ROTATIONS = (1 / 4096);
 	
@@ -59,12 +60,12 @@ public class DriveTrain extends Subsystem implements RobotMap {
 
 	private DriveTrain() {
 		
-		drivetrainMotors = new TalonSRX[NUMBER_DRIVETRAIN_MOTORS];
+		drivetrainMotors = new WPI_TalonSRX[NUMBER_DRIVETRAIN_MOTORS];
 
-		drivetrainMotors[FRONT_LEFT] = new TalonSRX(FRONT_LEFT_TALON_ID);
-		drivetrainMotors[REAR_LEFT] = new TalonSRX(REAR_LEFT_TALON_ID);
-		drivetrainMotors[FRONT_RIGHT] = new TalonSRX(FRONT_RIGHT_TALON_ID);
-		drivetrainMotors[REAR_RIGHT] = new TalonSRX(REAR_RIGHT_TALON_ID);
+		drivetrainMotors[FRONT_LEFT] = new WPI_TalonSRX(FRONT_LEFT_TALON_ID);
+		drivetrainMotors[REAR_LEFT] = new WPI_TalonSRX(REAR_LEFT_TALON_ID);
+		drivetrainMotors[FRONT_RIGHT] = new WPI_TalonSRX(FRONT_RIGHT_TALON_ID);
+		drivetrainMotors[REAR_RIGHT] = new WPI_TalonSRX(REAR_RIGHT_TALON_ID);
 		
 		InitializeDriveTrainMotors();
 		resetEncoderValue(LEFT_ENCODER);
@@ -75,10 +76,10 @@ public class DriveTrain extends Subsystem implements RobotMap {
 	public void InitializeDriveTrainMotors() {
 
 		chassis = new DifferentialDrive(
-				new SpeedControllerGroup(drivetrainMotors[FRONT_LEFT].getWPILIB_SpeedController(),
-						drivetrainMotors[REAR_LEFT].getWPILIB_SpeedController()),
-				new SpeedControllerGroup(drivetrainMotors[FRONT_RIGHT].getWPILIB_SpeedController(),
-						drivetrainMotors[REAR_RIGHT].getWPILIB_SpeedController()));
+				new SpeedControllerGroup(drivetrainMotors[FRONT_LEFT],
+						drivetrainMotors[REAR_LEFT]),
+				new SpeedControllerGroup(drivetrainMotors[FRONT_RIGHT],
+						drivetrainMotors[REAR_RIGHT]));
 
 		drivetrainMotors[FRONT_LEFT].setInverted(LEFT_SIDE_INVERTED);
 		drivetrainMotors[FRONT_RIGHT].setInverted(RIGHT_SIDE_INVERTED);
