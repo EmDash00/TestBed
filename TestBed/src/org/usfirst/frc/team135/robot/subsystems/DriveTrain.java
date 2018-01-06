@@ -58,13 +58,15 @@ public class DriveTrain extends Subsystem implements RobotMap {
 	}
 
 	private DriveTrain() {
-		// InitializeDriveTrainMotors();
+		
 		drivetrainMotors = new TalonSRX[NUMBER_DRIVETRAIN_MOTORS];
 
 		drivetrainMotors[FRONT_LEFT] = new TalonSRX(FRONT_LEFT_TALON_ID);
 		drivetrainMotors[REAR_LEFT] = new TalonSRX(REAR_LEFT_TALON_ID);
 		drivetrainMotors[FRONT_RIGHT] = new TalonSRX(FRONT_RIGHT_TALON_ID);
 		drivetrainMotors[REAR_RIGHT] = new TalonSRX(REAR_RIGHT_TALON_ID);
+		
+		InitializeDriveTrainMotors();
 		resetEncoderValue(LEFT_ENCODER);
 		resetEncoderValue(RIGHT_ENCODER);
 
