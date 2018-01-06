@@ -1,10 +1,12 @@
 package org.usfirst.frc.team135.robot.wrappers;
 
+import java.util.Optional;
+
 import edu.wpi.first.wpilibj.PIDOutput;
 
 public class DistanceOut implements PIDOutput
 {
-	public double output;
+	public double output = .4; //Default power for a drivetrain
 
 	
 	@Override

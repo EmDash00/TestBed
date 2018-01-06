@@ -27,14 +27,15 @@ public class DriveStraight extends Command {
 	{
 		requires(Robot.drivetrain);
 		requires(Robot.gyro);
+		
 		angleOut = new AngleOut();
+		distanceOut = new DistanceOut();
 		
 		angleController = new PIDController(0.0f, 0.0f, 0.0f, Robot.gyro.getPIDInput(), angleOut);
 	
 		
 		if (config.isPresent())
 		{
-			distanceOut = new DistanceOut();
 			
 			if (config.get().selectedDevice == Device.Camera)
 			{
