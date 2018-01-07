@@ -43,7 +43,7 @@ public class DriveStraight extends Command {
 			}
 			else if (config.get().selectedDevice == Device.Lidar)
 			{
-				//requires(Robot.lidars);
+				requires(Robot.lidar);
 			}
 			else if (config.get().selectedDevice == Device.UltrasonicSensor)
 			{
