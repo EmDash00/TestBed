@@ -35,31 +35,30 @@ public class Lidar extends Subsystem implements RobotMap
 	
 	public float getDistance()
 	{
-		byte[] lowerByte = GetLowerByte();
-		byte[] upperByte = GetUpperByte();
+		byte[] lowerByte = new byte[1];
+		byte[] upperByte = new byte[1];
+		
+		getLowerByte(lowerByte);
+		getUpperByte(upperByte);
 		
 		int lowerInt = (int)lowerByte[0];
 		int upperInt = (int)upperByte[0];
 		
 		int rawValue = (upperInt << 8) + lowerInt;
 		
-		return ((float)rawValue * conversions.LIDAR2INCH);
+		return ((float)rawValue * conversions.CM2INCH);
 
 	}
 	
-	private byte[] GetUpperByte() {
+	private void getUpperByte(byte[] buf) 
+	{
 		
-		byte[] buf = new byte[1];
 		lidar.read(UPPER_ADDRESS, 1, buf);
-		return buf;
-		
 	}
 
-	private byte[] GetLowerByte() 
+	private void getLowerByte(byte[] buf) 
 	{
-		byte[] buf = new byte[1];
 		lidar.read(LOWER_ADDRESS, 1, buf);
-		return buf;
 	}
  
 

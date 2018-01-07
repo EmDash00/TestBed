@@ -26,7 +26,7 @@ public interface RobotMap {
 	
 	public class conversions
 	{
-		public static final float LIDAR2INCH;
+		public static final float CM2INCH = 0.393701f; //Idk what this is.
 	}
 	
 	
