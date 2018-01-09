@@ -4,10 +4,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import java.lang.Math;
 
-import org.usfirst.frc.team135.robot.commands.DriveStraight;
-import org.usfirst.frc.team135.robot.commands.ShiftGears;
-import org.usfirst.frc.team135.robot.commands.StopShift;
-import org.usfirst.frc.team135.robot.commands.UnshiftGears;
 
 
 /**
@@ -116,8 +112,6 @@ public void ConfigureButtonMapping()
 public void AssignButtons()
 {
 	//DRIVE_STRAIGHT.whileHeld(new DriveStraight());
-	DISENGAGE.whenPressed(new UnshiftGears());
-	ENGAGE.whenPressed(new ShiftGears());
-	ZERO.whenPressed(new StopShift());
+
 }
 }
