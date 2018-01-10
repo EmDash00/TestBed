@@ -31,17 +31,13 @@ public class DriveStraight extends Command {
 		angleOut = new AngleOut();
 		distanceOut = new DistanceOut();
 		
-		angleController = new PIDController(0.0f, 0.0f, 0.0f, Robot.gyro.getPIDInput(), angleOut);
+		angleController = new PIDController(0.01f, 0.0f, 0.0f, Robot.gyro.getPIDInput(), angleOut);
 	
 		
 		if (config.isPresent())
 		{
 			
-			if (config.get().selectedDevice == Device.Camera)
-			{
-				requires(Robot.camera);
-			}
-			else if (config.get().selectedDevice == Device.Lidar)
+			if (config.get().selectedDevice == Device.Lidar)
 			{
 				requires(Robot.lidar);
 			}
@@ -64,7 +60,11 @@ public class DriveStraight extends Command {
 		}
 		
 		angleController.setSetpoint(angle.orElse(0.0));
-		setTimeout(timeout.orElse(10.0));
+		
+		if (timeout.isPresent())
+		{
+			setTimeout(timeout.get());
+		}
 		
 		
 	}

@@ -77,6 +77,19 @@ public void SolenoidOff()
 	leftSolenoid.set(DoubleSolenoid.Value.kOff);
 }
 
+public boolean GetPressureSwitchValue()
+{
+	boolean tankfull = compressor.getPressureSwitchValue();
+	return tankfull;
+	
+}
+
+public double GetCurrent()
+{
+	double current = compressor.getCompressorCurrent();
+	return current;
+}
+
 
 }
 

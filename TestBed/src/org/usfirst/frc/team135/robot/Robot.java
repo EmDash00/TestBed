@@ -13,13 +13,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team135.robot.commands.ExampleCommand;
 import org.usfirst.frc.team135.robot.commands.ShiftGears;
-import org.usfirst.frc.team135.robot.subsystems.Camera;
+import org.usfirst.frc.team135.robot.commands.DriveToUltrasonicDistance;
+
 import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team135.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team135.robot.subsystems.Gearshifters;
 import org.usfirst.frc.team135.robot.subsystems.Gyro;
 import org.usfirst.frc.team135.robot.subsystems.Lidar;
-import org.usfirst.frc.team135.robot.subsystems.NavX;
+
 import org.usfirst.frc.team135.robot.subsystems.UltrasonicSensor;
 
 //import com.kauailabs.navx.frc.AHRS;
@@ -37,10 +38,10 @@ public class Robot extends TimedRobot {
 	public static Gearshifters gearshifters;
 	public static DriveTrain drivetrain;
 	public static OI oi;
-	public static NavX navx;
+//	public static NavX navx;
 	public static UltrasonicSensor sonar;
 	public static Gyro gyro;
-	public static Camera camera;
+
 	public static Lidar lidar;
 
 	Command autonomousCommand;
@@ -57,15 +58,15 @@ public class Robot extends TimedRobot {
 		drivetrain = DriveTrain.getInstance();
 		gyro = Gyro.getInstance();
 		lidar = Lidar.getInstance();
-		navx = NavX.getInstance();
-		// navx = new NavX();
+		sonar = UltrasonicSensor.getInstance();
+
 		
-		chooser.addDefault("Default Auto", new ExampleCommand());
+		chooser.addDefault("Default Auto", new DriveToUltrasonicDistance());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 
 		oi = OI.getInstance();
-		//camera = camera.getInstance();
+
 	}
 
 	/**
@@ -127,6 +128,8 @@ public class Robot extends TimedRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
 	}
+	
+	
 
 	/**
 	 * This function is called periodically during operator control
@@ -134,8 +137,10 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+	//	System.out.print(gearshifters.GetPressureSwitchValue());
+		//System.out.print(gearshifters.GetCurrent());
+		System.out.print(sonar.GetSonarValue());
 	}
-
 	/**
 	 * This function is called periodically during test mode
 	 */

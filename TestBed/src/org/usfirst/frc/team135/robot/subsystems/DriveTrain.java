@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.*;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.*;
 
 
 /**
@@ -85,6 +85,8 @@ public class DriveTrain extends Subsystem implements RobotMap {
 		drivetrainMotors[FRONT_RIGHT].setInverted(RIGHT_SIDE_INVERTED);
 		drivetrainMotors[REAR_LEFT].setInverted(LEFT_SIDE_INVERTED);
 		drivetrainMotors[REAR_RIGHT].setInverted(RIGHT_SIDE_INVERTED);
+
+		chassis.setSafetyEnabled(false);
 
 	}
 

@@ -33,11 +33,10 @@ public class UltrasonicSensor extends Subsystem {
 	
 	public double GetSonarValue() //is the distance in inches
 	{
-		return sonar.getRangeInches(); //Function that gets the inches range from the sonar
+		double value = sonar.getRangeInches(); //Function that gets the inches range from the sonar
+		System.out.println("Distance = "+ value);
+		return value;
 	}
-	
-	
-	
 	
     public void initDefaultCommand() {
         
