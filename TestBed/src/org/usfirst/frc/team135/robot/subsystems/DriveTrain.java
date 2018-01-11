@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import org.usfirst.frc.team135.robot.RobotMap;
-import org.usfirst.frc.team135.robot.commands.DriveJ;
 import org.usfirst.frc.team135.robot.utility.PIDTalonSRX;
 
 import edu.wpi.first.wpilibj.*;
@@ -69,7 +68,8 @@ public class DriveTrain extends Subsystem implements RobotMap {
 		InitializeDriveTrainMotors();
 		resetEncoderValue(LEFT_ENCODER);
 		resetEncoderValue(RIGHT_ENCODER);
-
+		
+		chassis.setSafetyEnabled(false);
 	}
 
 	public void InitializeDriveTrainMotors() {
@@ -124,7 +124,7 @@ public class DriveTrain extends Subsystem implements RobotMap {
 	
 	public void ArcadeDrive(double power, double angle)
 	{
-		chassis.arcadeDrive(power, angle);
+		chassis.arcadeDrive(angle, power);
 	}
 	
 	public PIDTalonSRX getEncoderSource(int encoder, PIDSourceType type)

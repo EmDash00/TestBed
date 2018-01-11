@@ -4,10 +4,11 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import java.lang.Math;
 
-import org.usfirst.frc.team135.robot.commands.DriveStraight;
 import org.usfirst.frc.team135.robot.commands.ShiftGears;
 import org.usfirst.frc.team135.robot.commands.StopShift;
+import org.usfirst.frc.team135.robot.commands.TestGyro;
 import org.usfirst.frc.team135.robot.commands.UnshiftGears;
+import org.usfirst.frc.team135.robot.commands.ZeroGyro;
 
 
 /**
@@ -31,7 +32,7 @@ public class OI {
 	public JoystickButton[][] button;*/
 	
 	Joystick RIGHT, LEFT, MANIP;
-	JoystickButton ENGAGE, DISENGAGE, ZERO;
+	JoystickButton ENGAGE, DISENGAGE, ZERO, ZERO_GYRO, DRIVE_STRAIGHT_BACK;
 	
 	JoystickButton DRIVE_STRAIGHT;
 	
@@ -110,14 +111,18 @@ public void ConfigureButtonMapping()
 	DISENGAGE = new JoystickButton(MANIP, 8);
 	ZERO = new JoystickButton(MANIP, 10);
 	DRIVE_STRAIGHT = new JoystickButton(RIGHT, 5);
+	DRIVE_STRAIGHT_BACK = new JoystickButton(RIGHT, 6);
+	ZERO_GYRO = new JoystickButton(RIGHT, 6);
 	AssignButtons();
 }
 
 public void AssignButtons()
 {
-	//DRIVE_STRAIGHT.whileHeld(new DriveStraight());
+	DRIVE_STRAIGHT_BACK.whileHeld(new TestGyro(-.4));
+	DRIVE_STRAIGHT.whileHeld(new TestGyro(0));
 	DISENGAGE.whenPressed(new UnshiftGears());
 	ENGAGE.whenPressed(new ShiftGears());
 	ZERO.whenPressed(new StopShift());
+	ZERO_GYRO.whenPressed(new ZeroGyro());;
 }
 }

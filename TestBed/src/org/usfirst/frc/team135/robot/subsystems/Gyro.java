@@ -38,6 +38,16 @@ public class Gyro extends Subsystem {
 		return gyro.getAngle();
 	}
 	
+	public double getRate()
+	{
+		return gyro.getRate();
+	}
+	
+	public void resetGyro()
+	{
+		gyro.reset();
+	}
+	
 	
 	protected void initDefaultCommand() {
         
