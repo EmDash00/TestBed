@@ -4,10 +4,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import java.lang.Math;
 
-import org.usfirst.frc.team135.robot.commands.DriveStraight;
-import org.usfirst.frc.team135.robot.commands.ShiftGears;
-import org.usfirst.frc.team135.robot.commands.StopShift;
-import org.usfirst.frc.team135.robot.commands.UnshiftGears;
+import org.usfirst.frc.team135.robot.commands.*;
 
 
 /**
