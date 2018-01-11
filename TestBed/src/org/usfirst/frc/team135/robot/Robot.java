@@ -13,14 +13,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team135.robot.commands.ExampleCommand;
 import org.usfirst.frc.team135.robot.commands.ShiftGears;
-import org.usfirst.frc.team135.robot.subsystems.Camera;
 import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team135.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team135.robot.subsystems.Gearshifters;
 import org.usfirst.frc.team135.robot.subsystems.Gyro;
-import org.usfirst.frc.team135.robot.subsystems.Lidar;
-import org.usfirst.frc.team135.robot.subsystems.NavX;
-import org.usfirst.frc.team135.robot.subsystems.UltrasonicSensor;
+
 
 //import com.kauailabs.navx.frc.AHRS;
 
@@ -37,11 +34,7 @@ public class Robot extends TimedRobot {
 	public static Gearshifters gearshifters;
 	public static DriveTrain drivetrain;
 	public static OI oi;
-	public static NavX navx;
-	public static UltrasonicSensor sonar;
 	public static Gyro gyro;
-	public static Camera camera;
-	public static Lidar lidar;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -56,8 +49,6 @@ public class Robot extends TimedRobot {
 		gearshifters = Gearshifters.getInstance();
 		drivetrain = DriveTrain.getInstance();
 		gyro = Gyro.getInstance();
-		lidar = Lidar.getInstance();
-		navx = NavX.getInstance();
 		// navx = new NavX();
 		
 		chooser.addDefault("Default Auto", new ExampleCommand());

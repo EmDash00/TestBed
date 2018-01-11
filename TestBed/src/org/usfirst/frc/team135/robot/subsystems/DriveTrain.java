@@ -7,8 +7,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import org.usfirst.frc.team135.robot.RobotMap;
 import org.usfirst.frc.team135.robot.commands.DriveJ;
-import org.usfirst.frc.team135.robot.wrappers.PIDTalonSRX;
-import org.usfirst.frc.team135.robot.wrappers.PIDTalonSRX;
+import org.usfirst.frc.team135.robot.utility.PIDTalonSRX;
 
 import edu.wpi.first.wpilibj.*;
 
@@ -48,7 +47,7 @@ public class DriveTrain extends Subsystem implements RobotMap {
 
 
 	public void initDefaultCommand() {
-		setDefaultCommand(new DriveJ());
+
 	}
 
 	public static DriveTrain getInstance() {

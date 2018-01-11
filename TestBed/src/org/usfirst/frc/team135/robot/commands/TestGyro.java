@@ -1,39 +1,38 @@
 package org.usfirst.frc.team135.robot.commands;
 
-import org.usfirst.frc.team135.robot.*;
-import org.usfirst.frc.team135.robot.subsystems.UltrasonicSensor;
+import org.usfirst.frc.team135.robot.Robot;
+import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team135.robot.utility.*;
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.PIDController;
+import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DriveToUltrasonicDistance extends Command {
+public class TestGyro extends Command {
 
-    public DriveToUltrasonicDistance() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.sonar);
+	PIDController straightController;
+	AngleOut angleOut;
+	
+    public TestGyro() {
+    	requires(Robot.drivetrain);
+    	
+    	angleOut = new AngleOut();
+    	straightController = new PIDController(.01, 0.0, 0.0, Robot.gyro.getPIDInput(), angleOut); 
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	straightController.enable();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.sonar.GetSonarValue() > 12 )
-    	{
-    		Robot.drivetrain.TankDrive(.5, .5);
-    	}
-    	else
-    	{
-    		Robot.drivetrain.TankDrive(0, 0);
-
-    	}
+    	Robot.drivetrain.ArcadeDrive(.5, angleOut.output);
     }
-    
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
