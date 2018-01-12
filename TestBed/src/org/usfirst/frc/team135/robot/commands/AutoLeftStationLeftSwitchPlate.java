@@ -16,7 +16,7 @@ public class AutoLeftStationLeftSwitchPlate extends CommandGroup {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
-        // these will run in order.
+        // these will run in order. 
 
         // To run multiple commands at the same time,
         // use addParallel()
