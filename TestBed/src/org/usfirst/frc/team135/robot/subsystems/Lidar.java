@@ -46,8 +46,9 @@ public class Lidar extends Subsystem implements RobotMap
 		
 		int rawValue = (upperInt << 8) + lowerInt;
 		
-		return ((float)rawValue * conversions.CM2INCH);
-
+		float convertedValue = rawValue * conversions.CM2INCH;
+		System.out.print("LIDAR VALUE = " + convertedValue);
+		return convertedValue;
 	}
 	
 	private void getUpperByte(byte[] buf) 
@@ -63,8 +64,8 @@ public class Lidar extends Subsystem implements RobotMap
  
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+      
+    	
     }
 }
 

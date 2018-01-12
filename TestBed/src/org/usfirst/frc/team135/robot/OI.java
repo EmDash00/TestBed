@@ -17,20 +17,8 @@ import org.usfirst.frc.team135.robot.commands.DriveToUltrasonicDistance;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	/*public final int MAX_NUMBER_JOYSTICKS = 2;
-	public final int MAX_NUMBER_BUTTONS = 12;
-	
-	public final int LEFT_JOYSTICK = 0;
-	public final int RIGHT_JOYSTICK = 1;
-	
-	public final int ENGAGE_SHIFTER_BUTTON = 7; //trigger
-	public final int DISENGAGE_SHIFTER_BUTTON = 8;
-	public boolean gearShiftOn = false; */
-	
+
 	public final double JOYSTICK_DEADBAND = 0.15;
-	
-	/*public Joystick[] joystick;
-	public JoystickButton[][] button;*/
 	
 	Joystick RIGHT, LEFT, MANIP;
 	JoystickButton ENGAGE, DISENGAGE, ZERO;
@@ -51,10 +39,6 @@ public static OI getInstance()
 
 private OI()
 {
-	/*joystick = new Joystick[MAX_NUMBER_JOYSTICKS];
-	button = new JoystickButton[MAX_NUMBER_JOYSTICKS][MAX_NUMBER_BUTTONS];
-	InitializeJoysticks();
-	ConfigureButtonMapping();*/
 	RIGHT = new Joystick(1);
 	LEFT = new Joystick(0);
 	MANIP = new Joystick(2);
@@ -63,24 +47,7 @@ private OI()
 
 }
 
-/*public void InitializeJoysticks()
-{
 
-	for (int i=0;i <=MAX_NUMBER_JOYSTICKS; i++)
-	{
-		joystick[i] = new Joystick(i);
-		for (int k=0; k<=MAX_NUMBER_BUTTONS; k++)
-		{
-			button[i][k] = new JoystickButton(joystick[i], k);
-		}
-	}
-}
-*/
-/*public boolean GetButton(int joysticknumber, int buttonnumber)
-{
-	boolean value = button[joysticknumber][buttonnumber].get();
-	return value;
-}*/
 public double SetThreshold(double joystickValue)
 {
 	if (Math.abs(joystickValue) <= JOYSTICK_DEADBAND)
@@ -103,8 +70,6 @@ public double GetRightJoystickY()
 {
 	double value = SetThreshold(RIGHT.getY());
 	return value;
-
-	
 }
 
 public void ConfigureButtonMapping()
@@ -114,7 +79,6 @@ public void ConfigureButtonMapping()
 	ZERO = new JoystickButton(MANIP, 10);
 	DRIVE_STRAIGHT = new JoystickButton(RIGHT, 5);
 
-	
 	AssignButtons();
 }
 
@@ -125,6 +89,5 @@ public void AssignButtons()
 	ENGAGE.whenPressed(new ShiftGears());
 	ZERO.whenPressed(new StopShift());
 
-	
 }
 }

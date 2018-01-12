@@ -27,6 +27,7 @@ public interface RobotMap {
 	public class conversions
 	{
 		public static final float CM2INCH = 0.393701f; //Idk what this is.
+		public static final float INCH2CM = 2.54f;
 	}
 	
 	
