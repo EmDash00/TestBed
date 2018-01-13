@@ -6,11 +6,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutoLeftStationAutoLine extends CommandGroup {
+public class AutoRightStationAutoLine extends CommandGroup {
 
-	
-	
-    public AutoLeftStationAutoLine() {
+    public AutoRightStationAutoLine() {
     	addSequential(AutoDriveStraight());
         // Add Commands here:
         // e.g. addSequential(new Command1());

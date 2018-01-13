@@ -135,6 +135,11 @@ public class DriveTrain extends Subsystem implements RobotMap {
 		return new PIDTalonSRX(drivetrainMotors[encoder], DEFAULT_SENSOR_INDEX, type);
 	}
 
+	public void MecanumDrive(double d, double e) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
 

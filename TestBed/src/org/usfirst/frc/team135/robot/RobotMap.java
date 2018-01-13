@@ -24,6 +24,21 @@ public interface RobotMap {
 	public static final boolean RIGHT_SIDE_INVERTED = true;
 	public static final boolean LEFT_SIDE_INVERTED = false;
 	
+	
+
+	public enum AutoOptions
+	{
+		AUTO_LEFT_STATION_AUTO_LINE, 
+		AUTO_LEFT_STATION_LEFT_SWITCH_PLATE,
+		AUTO_LEFT_STATION_RIGHT_SWITCH_PLATE,
+		AUTO_MIDDLE_STATION_AUTO_LINE,
+		AUTO_MIDDLE_STATION_LEFT_SWITCH_PLATE,
+		AUTO_MIDDLE_STATION_RIGHT_SWITCH_PLATE,
+		AUTO_RIGHT_STATION_AUTO_LINE,
+		AUTO_RIGHT_STATION_LEFT_SWITCH_PLATE,
+		AUTO_RIGHT_STATION_RIGHT_SWITCH_PLATE;
+	}
+	
 	public class conversions
 	{
 		public static final float CM2INCH = 0.393701f; //Idk what this is.

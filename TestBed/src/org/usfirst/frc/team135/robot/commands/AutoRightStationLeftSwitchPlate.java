@@ -6,12 +6,15 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutoLeftStationAutoLine extends CommandGroup {
+public class AutoRightStationLeftSwitchPlate extends CommandGroup {
 
-	
-	
-    public AutoLeftStationAutoLine() {
+    public AutoRightStationLeftSwitchPlate() {
     	addSequential(AutoDriveStraight());
+    	addSequential(AutoTurnLeft());
+    	addSequential(AutoDriveStraight());
+    	addSequential(AutoTurnLeft());
+    	addSequential(AutoDriveStraight());
+    	addSequential(AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -29,6 +32,16 @@ public class AutoLeftStationAutoLine extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     }
+
+	private Command AutoCubeRelease() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Command AutoTurnLeft() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	private Command AutoDriveStraight() {
 		// TODO Auto-generated method stub

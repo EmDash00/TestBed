@@ -24,14 +24,17 @@ public class DriveToUltrasonicDistance extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.sonar.GetSonarValue() > 12 )
+    	while (Robot.sonar.GetSonarValue() > 30 )
     	{
-    		Robot.drivetrain.TankDrive(.5, .5);
+    		Robot.drivetrain.TankDrive(.5, -.5);
     	}
-    	else
+    	while (Robot.sonar.GetSonarValue() >=30 && Robot.sonar.GetSonarValue()< 20 )
     	{
-    		Robot.drivetrain.TankDrive(0, 0);
-
+    		Robot.drivetrain.TankDrive(.25, -.25);
+    	}
+    	while (Robot.sonar.GetSonarValue() <= 20 )
+    	{
+    		Robot.drivetrain.TankDrive(0,0);
     	}
     }
     
