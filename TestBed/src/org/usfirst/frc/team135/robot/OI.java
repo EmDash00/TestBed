@@ -72,6 +72,12 @@ public double GetRightJoystickY()
 	return value;
 }
 
+public double GetManipJoystickY()
+{
+	double value = SetThreshold(MANIP.getY());
+	return value;
+}
+
 public void ConfigureButtonMapping()
 {
 	ENGAGE = new JoystickButton(MANIP, 7);
@@ -88,6 +94,7 @@ public void AssignButtons()
 	DISENGAGE.whenPressed(new UnshiftGears());
 	ENGAGE.whenPressed(new ShiftGears());
 	ZERO.whenPressed(new StopShift());
+	
 
 }
 }

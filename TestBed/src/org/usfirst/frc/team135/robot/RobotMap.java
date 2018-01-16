@@ -13,6 +13,9 @@ public interface RobotMap {
 	public static final int FRONT_RIGHT_TALON_ID = 13;
 	public static final int FRONT_LEFT_TALON_ID = 11;
 	
+	public static final int RIGHT_INTAKE_VICTOR_ID = 1;
+	public static final int LEFT_INTAKE_VICTOR_ID = 2;
+	
 	public static final int LEFT_SOLENOID_ENGAGE = 3;
 	public static final int RIGHT_SOLENOID_ENGAGE = 0;
 	public static final int LEFT_SOLENOID_DISENGAGE = 2;
@@ -20,9 +23,11 @@ public interface RobotMap {
 
 	public static final int PNEUMATICS_CONTROL_MODULE_ID = 0;
 	public static final int POWER_DISTRIBUTION_PANEL_ID = 0;
+	public static final int CANIFIER_ID = 0;
 	
 	public static final boolean RIGHT_SIDE_INVERTED = true;
 	public static final boolean LEFT_SIDE_INVERTED = false;
+
 	
 	public class conversions
 	{
