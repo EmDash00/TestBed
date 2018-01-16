@@ -14,6 +14,7 @@ public class Intake extends Subsystem implements RobotMap{
 	
 	private WPI_VictorSPX leftIntakeMotor, rightIntakeMotor;
 	
+
 	private static Intake instance;
 	
 	public static Intake getInstance()
