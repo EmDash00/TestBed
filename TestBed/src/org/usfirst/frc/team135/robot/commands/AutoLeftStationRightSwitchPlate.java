@@ -6,15 +6,17 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
+
+//FORGET ABOUT THIS FOR A SEC...
 public class AutoLeftStationRightSwitchPlate extends CommandGroup {
 
     public AutoLeftStationRightSwitchPlate() {
-    	addSequential(AutoDriveStraight());
-    	addSequential(AutoTurnRight());
-    	addSequential(AutoDriveStraight());
-    	addSequential(AutoTurnRight());
-    	addSequential(AutoDriveStraight());
-    	addSequential(AutoCubeRelease());
+    	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoTurnRight());
+    	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoTurnRight());
+    	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -33,18 +35,5 @@ public class AutoLeftStationRightSwitchPlate extends CommandGroup {
         // arm.
     }
 
-	private Command AutoCubeRelease() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	private Command AutoTurnRight() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Command AutoDriveStraight() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

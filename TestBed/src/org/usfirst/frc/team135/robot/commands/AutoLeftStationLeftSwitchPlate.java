@@ -9,10 +9,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoLeftStationLeftSwitchPlate extends CommandGroup {
 
     public AutoLeftStationLeftSwitchPlate() {
-    	addSequential(AutoDriveStraight());
-    	addSequential(AutoTurnRight());
-    	addSequential(AutoDriveStraight());
-    	addSequential(AutoCubeRelease());
+    	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoTurnRight());
+    	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoLift()); 
+    	addSequential(new AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -31,18 +32,5 @@ public class AutoLeftStationLeftSwitchPlate extends CommandGroup {
         // arm.
     }
 
-	private Command AutoCubeRelease() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	private Command AutoDriveStraight() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Command AutoTurnRight() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

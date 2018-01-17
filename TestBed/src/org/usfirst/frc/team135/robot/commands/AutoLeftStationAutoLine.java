@@ -2,6 +2,7 @@ package org.usfirst.frc.team135.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc.team135.robot.RobotMap;
 
 /**
  *
@@ -11,7 +12,7 @@ public class AutoLeftStationAutoLine extends CommandGroup {
 	
 	
     public AutoLeftStationAutoLine() {
-    	addSequential(AutoDriveStraight());
+    	addSequential(new AutoDriveStraight(RobotMap.autoLineDistance));
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -30,8 +31,4 @@ public class AutoLeftStationAutoLine extends CommandGroup {
         // arm.
     }
 
-	private Command AutoDriveStraight() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

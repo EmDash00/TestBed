@@ -1,15 +1,18 @@
 package org.usfirst.frc.team135.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class AutoRightStationAutoLine extends CommandGroup {
+public class AutoRightStationRightScale extends CommandGroup {
 
-    public AutoRightStationAutoLine() {
+    public AutoRightStationRightScale() {
     	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoTurnLeft());
+    	addSequential(new AutoLift());
+    	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -27,7 +30,4 @@ public class AutoRightStationAutoLine extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     }
-
-
-	
 }
