@@ -42,7 +42,7 @@ public class AutoDriveStraight extends Command {
     		timer.start();
     		while (Robot.sonar.GetSonarValue() <RobotMap.autoLine && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
     		{
-    			Robot.drivetrain.MecanumDrive(.5, -.5); //Does this get changed to MecanumDrive? 
+    			Robot.drivetrain.MecanumDrive(-.5, .5); 
     		}
     		timer.stop();
     		timer.reset();
@@ -55,44 +55,31 @@ public class AutoDriveStraight extends Command {
     	
     	else if (distance == RobotMap.autoScale)
 		{
+    		timer.start();
 			while (Robot.sonar.GetSonarValue() < RobotMap.autoScale && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
     		{
-    			Robot.drivetrain.MecanumDrive(.5, -.5); 
+    			Robot.drivetrain.MecanumDrive(-.5, .5); 
     		}
-    		
+			timer.stop();
+    		timer.reset();
+    		timer.start();
     		while (Robot.sonar.GetSonarValue() >= RobotMap.autoScale && timer.get() < 3 && DriverStation.getInstance().isAutonomous())
     		{
-    			Robot.drivetrain.MecanumDrive(0,0); //will this get caught in a scary loop?
+    			Robot.drivetrain.MecanumDrive(0,0); 
     		}
 		}
 		
-    	else if (distance == 168)
+    	else if (distance == RobotMap.autoSwitch)
 		{
-			while (Robot.sonar.GetSonarValue() < 160  && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
+    		timer.start();
+			while (Robot.sonar.GetSonarValue() < RobotMap.autoSwitch  && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
     		{
-    			Robot.drivetrain.MecanumDrive(.5, -.5); //Does this get changed to MecanumDrive? 
+    			Robot.drivetrain.MecanumDrive(-.5, .5); 
     		}
-    		while (Robot.sonar.GetSonarValue() >=160 && Robot.sonar.GetSonarValue()< 168 )
-    		{
-    			Robot.drivetrain.MecanumDrive(.25, -.25);
-    		}
-    		while (Robot.sonar.GetSonarValue() >= 168  && timer.get() < 3 && DriverStation.getInstance().isAutonomous())
-    		{
-    			Robot.drivetrain.MecanumDrive(0,0);
-    		}
-		}
-		
-    	else if (distance == 168)
-		{
-			while (Robot.sonar.GetSonarValue() < 160 ) //change value when we know that we need for each path
-    		{
-    			Robot.drivetrain.MecanumDrive(.5, -.5); //Does this get changed to MecanumDrive? 
-    		}
-    		while (Robot.sonar.GetSonarValue() >=160 && Robot.sonar.GetSonarValue()< 168 )
-    		{
-    			Robot.drivetrain.MecanumDrive(.25, -.25);
-    		}
-    		while (Robot.sonar.GetSonarValue() >= 168 )
+			timer.stop();
+    		timer.reset();
+    		timer.start();
+    		while (Robot.sonar.GetSonarValue() >= RobotMap.autoSwitch  && timer.get() < 3 && DriverStation.getInstance().isAutonomous())
     		{
     			Robot.drivetrain.MecanumDrive(0,0);
     		}

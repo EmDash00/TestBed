@@ -8,10 +8,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoLeftStationLeftScale extends CommandGroup {
 
     public AutoLeftStationLeftScale() {
-    	addSequential(new AutoDriveStraight(RobotMap.autoScaleVert));
-    	addSequential(new AutoTurnRight());
-    	addSequential(new AutoDriveStraight());
+    	addSequential(new AutoDriveStraight(RobotMap.autoScale));
     	addSequential(new AutoLift());
+    	addSequential(new AutoDriveSide(RobotMap.autoScaleSide));
     	addSequential(new AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
