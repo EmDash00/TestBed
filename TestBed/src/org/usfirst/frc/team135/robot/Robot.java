@@ -20,6 +20,7 @@ import org.usfirst.frc.team135.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team135.robot.subsystems.Gearshifters;
 import org.usfirst.frc.team135.robot.subsystems.Gyro;
 import org.usfirst.frc.team135.robot.subsystems.Lidar;
+import org.usfirst.frc.team135.robot.subsystems.NavX;
 
 import org.usfirst.frc.team135.robot.subsystems.UltrasonicSensor;
 
@@ -38,9 +39,9 @@ public class Robot extends TimedRobot {
 	public static Gearshifters gearshifters;
 	public static DriveTrain drivetrain;
 	public static OI oi;
-//	public static NavX navx;
 	public static UltrasonicSensor sonar;
 	public static Gyro gyro;
+	public static NavX navx;
 
 	public static Lidar lidar;
 
@@ -59,6 +60,7 @@ public class Robot extends TimedRobot {
 		gyro = Gyro.getInstance();
 		lidar = Lidar.getInstance();
 		sonar = UltrasonicSensor.getInstance();
+		navx = NavX.getInstance();
 
 		
 		chooser.addDefault("Default Auto", new DriveToUltrasonicDistance());
