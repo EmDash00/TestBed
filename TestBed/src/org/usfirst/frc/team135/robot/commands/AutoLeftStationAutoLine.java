@@ -12,7 +12,7 @@ public class AutoLeftStationAutoLine extends CommandGroup {
 	
 	
     public AutoLeftStationAutoLine() {
-    	addSequential(new AutoDriveStraight(RobotMap.autoLineDistance));
+    	addSequential(new AutoDriveStraight(RobotMap.autoLine));
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

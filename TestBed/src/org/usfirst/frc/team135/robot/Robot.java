@@ -3,7 +3,7 @@ package org.usfirst.frc.team135.robot;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.TimedRobot;
+//import edu.wpi.first.wpilibj.TimedRobot;
 //import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-
+import org.usfirst.frc.team135.robot.commands.*;
 import org.usfirst.frc.team135.robot.commands.ExampleCommand;
 import org.usfirst.frc.team135.robot.commands.ShiftGears;
 import org.usfirst.frc.team135.robot.commands.DriveToUltrasonicDistance;
@@ -34,7 +34,7 @@ import org.usfirst.frc.team135.robot.subsystems.UltrasonicSensor;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class Robot extends TimedRobot {
+public class Robot extends IterativeRobot {
 	
 	public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static Gearshifters gearshifters;
@@ -66,7 +66,8 @@ public class Robot extends TimedRobot {
 
 		
 		chooser.addDefault("Default Auto", new DriveToUltrasonicDistance());
-		// chooser.addObject("My Auto", new MyAutoCommand());
+		 chooser.addObject("Right Auto Line", new AutoRightStationAutoLine());
+		 chooser.addObject("Left Auto Line", new AutoLeftStationAutoLine());
 		SmartDashboard.putData("Auto mode", chooser);
 
 		oi = OI.getInstance();
@@ -102,6 +103,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void autonomousInit() {
 		autonomousCommand = chooser.getSelected();
+		autonomousCommand.start();
 
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",

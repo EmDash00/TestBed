@@ -6,6 +6,7 @@ package org.usfirst.frc.team135.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
+
 public interface RobotMap {
 	
 	public static final int REAR_RIGHT_TALON_ID = 14;
