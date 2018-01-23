@@ -42,18 +42,33 @@ public class AutoDriveStraight extends Command {
     		timer.start();
     		while (Robot.sonar.GetSonarValue() <RobotMap.autoLine && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
     		{
-    			Robot.drivetrain.MecanumDrive(-.5, .5); 
+    			Robot.drivetrain.TankDrive(-.5, .5); 
     		}
     		timer.stop();
     		timer.reset();
     		timer.start();
     		while (Robot.sonar.GetSonarValue() >= RobotMap.autoLine && timer.get() < 3 && DriverStation.getInstance().isAutonomous())
     		{
-    			Robot.drivetrain.MecanumDrive(0,0);
+    			Robot.drivetrain.TankDrive(0,0);
     		}
     	}
     	
-    	else if (distance == RobotMap.autoScale)
+    	else if (distance == RobotMap.autoLineMid) {
+    		
+    		timer.start();
+    		while (Robot.sonar.GetSonarValue() <RobotMap.autoLineMid && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
+    		{
+    			Robot.drivetrain.TankDrive(-.5, .5); 
+    		}
+    		timer.stop();
+    		timer.reset();
+    		timer.start();
+    		while (Robot.sonar.GetSonarValue() >= RobotMap.autoLineMid && timer.get() < 3 && DriverStation.getInstance().isAutonomous())
+    		{
+    			Robot.drivetrain.TankDrive(0,0);
+    		}
+    	}
+    	/*else if (distance == RobotMap.autoScale)
 		{
     		timer.start();
 			while (Robot.sonar.GetSonarValue() < RobotMap.autoScale && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
@@ -83,11 +98,11 @@ public class AutoDriveStraight extends Command {
     		{
     			Robot.drivetrain.MecanumDrive(0,0);
     		}
-		}
+		}*/
 
 		else 
 		{
-			Robot.drivetrain.MecanumDrive(0,0);
+			Robot.drivetrain.TankDrive(0,0);
 		}
     }
     	

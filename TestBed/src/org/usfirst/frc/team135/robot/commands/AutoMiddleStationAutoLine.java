@@ -3,6 +3,9 @@ package org.usfirst.frc.team135.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
+import org.usfirst.frc.team135.robot.RobotMap;
+import org.usfirst.frc.team135.robot.commands.AutoDriveStraight;
+
 /**
  *
  */
@@ -11,11 +14,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoMiddleStationAutoLine extends CommandGroup {
 
     public AutoMiddleStationAutoLine() {
-    	addSequential(AutoDriveStraight());
-    	addSequential(AutoTurnLeft());
-    	addSequential(AutoDriveStraight());
-    	addSequential(AutoTurnRight());
-    	addSequential(AutoDriveStraight());
+    	addSequential(new AutoDriveStraight(RobotMap.autoLineMid));
+    	//addSequential(AutoTurnLeft());
+    	//addSequential(AutoDriveStraight());
+    	//addSequential(AutoTurnRight());s
+    	//addSequential(AutoDriveStraight());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -34,18 +37,6 @@ public class AutoMiddleStationAutoLine extends CommandGroup {
         // arm.
     }
 
-	private Command AutoTurnLeft() {
-		// TODO Auto-generated method stub
-		return null;
+	
 	}
 
-	private Command AutoTurnRight() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Command AutoDriveStraight() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-}

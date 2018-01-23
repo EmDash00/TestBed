@@ -68,7 +68,8 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Default Auto", new DriveToUltrasonicDistance());
 		 chooser.addObject("Right Auto Line", new AutoRightStationAutoLine());
 		 chooser.addObject("Left Auto Line", new AutoLeftStationAutoLine());
-		SmartDashboard.putData("Auto mode", chooser);
+		 chooser.addObject("Mid Auto Line", new AutoMiddleStationAutoLine());
+		 SmartDashboard.putData("Auto mode", chooser);
 
 		oi = OI.getInstance();
 
@@ -102,7 +103,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
+		autonomousCommand = (Command) chooser.getSelected();
 		autonomousCommand.start();
 
 		/*

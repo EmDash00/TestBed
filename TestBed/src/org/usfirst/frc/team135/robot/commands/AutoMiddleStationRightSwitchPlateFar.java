@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoMiddleStationRightSwitchPlateFar extends CommandGroup {
 
     public AutoMiddleStationRightSwitchPlateFar() {
-    	addSequential(new AutoDriveDiagonal());
+    	/*addSequential(new AutoDriveDiagonal());
     	addSequential(new AutoTurnLeft());
     	addSequential(new AutoLift()); 
     	addSequential(new AutoDriveStraight()); //does field orientation matter during auto?
-    	addSequential(new AutoCubeRelease());
+    	addSequential(new AutoCubeRelease());*/
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

@@ -39,7 +39,7 @@ public class DriveTrain extends Subsystem implements RobotMap {
 	
 	private static WPI_TalonSRX[] drivetrainMotors;
 	
-	private static final int ENCODER2ROTATIONS = (1 / 4096);
+	private static final double ENCODER2ROTATIONS = (1 / 4096.0);
 	
 	
 	private DifferentialDrive chassis;

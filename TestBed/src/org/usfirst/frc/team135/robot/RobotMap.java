@@ -25,7 +25,8 @@ public interface RobotMap {
 	public static final boolean RIGHT_SIDE_INVERTED = true;
 	public static final boolean LEFT_SIDE_INVERTED = false;
 	
-	public static final int autoLine = 238;
+	public static final int autoLine = 200;
+	public static final int autoLineMid = 100;
 	public static final int autoScale = 325;
 	public static final int autoSwitch = 165;
 

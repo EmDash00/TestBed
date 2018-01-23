@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoRightStationLeftSwitchPlate extends CommandGroup {
 
     public AutoRightStationLeftSwitchPlate() {
-    	addSequential(new AutoDriveStraight());
+    	/*addSequential(new AutoDriveStraight());
     	addSequential(new AutoTurnLeft());
     	addSequential(new AutoDriveStraight());
     	addSequential(new AutoTurnLeft());
     	addSequential(new AutoDriveStraight());
-    	addSequential(new AutoCubeRelease());
+    	addSequential(new AutoCubeRelease());*/
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
