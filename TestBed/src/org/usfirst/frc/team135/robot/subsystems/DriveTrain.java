@@ -23,6 +23,8 @@ import com.ctre.phoenix.motorcontrol.can.*;
  */
 public class DriveTrain extends Subsystem implements RobotMap {
 	
+	
+	
 	private static final int NUMBER_DRIVETRAIN_MOTORS = 4;
 	private static final int FRONT_LEFT = 0;
 	private static final int REAR_LEFT = 1;
@@ -32,6 +34,8 @@ public class DriveTrain extends Subsystem implements RobotMap {
 	private static final int DEFAULT_SENSOR_INDEX = 1;
 	public static final int LEFT_ENCODER = FRONT_LEFT;
 	public static final int RIGHT_ENCODER = FRONT_RIGHT;
+	
+	
 	
 	//-1 is reversed. 1 is not reversed.
 	private static final boolean[] ENCODER_REVERSED = {true, true};
@@ -112,11 +116,28 @@ public class DriveTrain extends Subsystem implements RobotMap {
 		}
 
 	}
-
+	
+	// (ticks/4096 ticks)*(4 *2*math.pi in/1 rev) = Distance (inches)
+	
 	public double getEncoderValue(int side) {
-		return (((double) drivetrainMotors[side].getSelectedSensorPosition(DEFAULT_SENSOR_INDEX) * ENCODER2ROTATIONS));
+		return (((double) drivetrainMotors[side].getSelectedSensorPosition(DEFAULT_SENSOR_INDEX)));
 	}
 
+	public double getRightEncoderDist(){
+		double RIGHT_ENCODER_REVS = (getEncoderValue(RIGHT_ENCODER) / 4096);
+		double RIGHT_ENCODER_DISTANCE = (RIGHT_ENCODER_REVS * (4*2*Math.PI));
+		return RIGHT_ENCODER_DISTANCE;
+		
+	}
+	
+	public double getLeftEncoderDist(){
+		double LEFT_ENCODER_REVS = (getEncoderValue(LEFT_ENCODER) / 4096);
+		double LEFT_ENCODER_DISTANCE = (LEFT_ENCODER_REVS * (4*2*Math.PI));
+		return LEFT_ENCODER_DISTANCE;
+		
+	}
+	
+	
 	public void resetEncoderValue(int side) {
 		drivetrainMotors[side].setSelectedSensorPosition(DEFAULT_SENSOR_INDEX, 0, 10);
 	}

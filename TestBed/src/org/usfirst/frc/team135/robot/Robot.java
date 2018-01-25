@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.*;
 
 import org.usfirst.frc.team135.robot.commands.*;
 import org.usfirst.frc.team135.robot.commands.ExampleCommand;
@@ -43,7 +44,6 @@ public class Robot extends IterativeRobot {
 //	public static NavX navx;
 	public static UltrasonicSensor sonar;
 	public static Gyro gyro;
-
 	public static Lidar lidar;
 
 	
@@ -69,6 +69,7 @@ public class Robot extends IterativeRobot {
 		 chooser.addObject("Right Auto Line", new AutoRightStationAutoLine());
 		 chooser.addObject("Left Auto Line", new AutoLeftStationAutoLine());
 		 chooser.addObject("Mid Auto Line", new AutoMiddleStationAutoLine());
+		 chooser.addObject("Encoder Auto Line", new AutoMiddleStationAutoLine());
 		 SmartDashboard.putData("Auto mode", chooser);
 
 		oi = OI.getInstance();

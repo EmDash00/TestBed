@@ -29,8 +29,12 @@ public interface RobotMap {
 	public static final int autoLineMid = 100;
 	public static final int autoScale = 325;
 	public static final int autoSwitch = 165;
+	public static final int autoLineEnc = 200;
 
 	public static final int autoScaleSide = 33;
+	
+	
+	
 	/*public enum AutoOptions
 	{
 		AUTO_LEFT_STATION_AUTO_LINE, 
