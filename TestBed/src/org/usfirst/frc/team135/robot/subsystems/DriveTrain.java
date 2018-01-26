@@ -109,12 +109,21 @@ public class DriveTrain extends Subsystem implements RobotMap {
 		 * drivetrainMotors[RIGHT_ENCODER].setStatusFrameRateMs(StatusFrameRate.QuadEncoder, 10);
 		 */
 
-		for (int i = LEFT_ENCODER; i <= RIGHT_ENCODER; i += 2) {
+	/*	for (int i = LEFT_ENCODER; i <= RIGHT_ENCODER; i += 2) {
 			drivetrainMotors[i].configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 1, 10);
 			drivetrainMotors[i].setStatusFramePeriod(StatusFrameEnhanced.Status_3_Quadrature, 10, 10);
 			drivetrainMotors[i].setSensorPhase(ENCODER_REVERSED[i]);
-		}
-
+		} */
+//this is bad
+		
+		drivetrainMotors[LEFT_ENCODER].configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 1, 10);
+		drivetrainMotors[LEFT_ENCODER].setStatusFramePeriod(StatusFrameEnhanced.Status_3_Quadrature, 10, 10);
+		drivetrainMotors[LEFT_ENCODER].setSensorPhase(ENCODER_REVERSED[RIGHT_ENCODER]);
+		
+		drivetrainMotors[RIGHT_ENCODER].configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 1, 10);
+		drivetrainMotors[RIGHT_ENCODER].setStatusFramePeriod(StatusFrameEnhanced.Status_3_Quadrature, 10, 10);
+		drivetrainMotors[RIGHT_ENCODER].setSensorPhase(ENCODER_REVERSED[LEFT_ENCODER]);
+		
 	}
 	
 	// (ticks/4096 ticks)*(4 *2*math.pi in/1 rev) = Distance (inches)
