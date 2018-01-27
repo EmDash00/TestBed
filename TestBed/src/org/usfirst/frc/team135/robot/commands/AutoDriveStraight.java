@@ -1,9 +1,9 @@
 package org.usfirst.frc.team135.robot.commands;
 
-import org.usfirst.frc.team135.robot.*;
+//import org.usfirst.frc.team135.robot.*;
 import org.usfirst.frc.team135.robot.Robot;
 import org.usfirst.frc.team135.robot.RobotMap; 
-import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
+//import org.usfirst.frc.team135.robot.subsystems.DriveTrain;
 
 //import java.awt.Robot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.DriverStation;
 //import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 
-import org.usfirst.frc.team135.robot.commands.AutoLeftStationAutoLine;
+//import org.usfirst.frc.team135.robot.commands.AutoLeftStationAutoLine;
 /**
  *4096 rpm
  */
@@ -41,7 +41,7 @@ public class AutoDriveStraight extends Command {
     	if (distance == RobotMap.autoLine) {
     		
     		timer.start();
-    		while (Robot.sonar.GetSonarValue() <RobotMap.autoLine && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
+    		while (Robot.sonar.GetSonarValue() <RobotMap.autoLine && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) 
     		{
     			Robot.drivetrain.TankDrive(-.5, .5); 
     		}
@@ -70,7 +70,7 @@ public class AutoDriveStraight extends Command {
     		}
     	}
     	
-else if (distance == RobotMap.autoLineEnc) {
+    	else if (distance == RobotMap.autoLineEnc) {
     		
     		timer.start();
     		while (Robot.drivetrain.getRightEncoderDist()<RobotMap.autoLineEnc && Robot.drivetrain.getLeftEncoderDist()<RobotMap.autoLineEnc && timer.get() < 3 && DriverStation.getInstance().isAutonomous()) //change value when we know that we need for each path
