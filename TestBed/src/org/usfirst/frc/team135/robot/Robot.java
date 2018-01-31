@@ -70,8 +70,13 @@ public class Robot extends IterativeRobot {
 		 chooser.addObject("Left Auto Line", new AutoLeftStationAutoLine());
 		 chooser.addObject("Mid Auto Line", new AutoMiddleStationAutoLine());
 		 chooser.addObject("Encoder Auto Line", new AutoMiddleStationAutoLine());
+		 
+		 chooser.addObject("Right Station", new GetGameSpecificMessage("RightStation"));
+		 chooser.addObject("Left Station", new GetGameSpecificMessage("LeftStation"));
+		 chooser.addObject("Middle Station", new GetGameSpecificMessage("MiddleStation"));
+		 
 		 SmartDashboard.putData("Auto mode", chooser);
-
+		 
 		oi = OI.getInstance();
 
 	}
