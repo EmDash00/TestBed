@@ -8,16 +8,20 @@ import edu.wpi.first.wpilibj.Ultrasonic;
  *
  */
 public class UltrasonicSensor extends Subsystem {
-	static final int SONAR_TRIGGER_PORT = 2;
-	static final int SONAR_ECHO_PORT = 3;
+	static final int BACK_SONAR_TRIGGER_PORT = 2;
+	static final int BACK_SONAR_ECHO_PORT = 3;
+	
+	static final int FRONT_SONAR_TRIGGER_PORT = 0;
+	static final int FRONT_SONAR_ECHO_PORT = 1;
+	
 	double distance = 0;
-	private Ultrasonic sonar = new Ultrasonic(SONAR_TRIGGER_PORT,SONAR_ECHO_PORT);	
+	private Ultrasonic backSonar = new Ultrasonic(BACK_SONAR_TRIGGER_PORT,BACK_SONAR_ECHO_PORT);	
 	
 	private static UltrasonicSensor instance;
 	
 	public UltrasonicSensor()
 	{
-		sonar.setAutomaticMode(true);
+		backSonar.setAutomaticMode(true);
 	}
 	
 	public static UltrasonicSensor getInstance()
