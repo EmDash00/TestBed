@@ -1,5 +1,7 @@
 package org.usfirst.frc.team135.robot.commands;
 
+import org.usfirst.frc.team135.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
@@ -9,10 +11,10 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoMiddleStationLeftSwitchPlate extends CommandGroup {
 
     public AutoMiddleStationLeftSwitchPlate() {
-    /*	addSequential(new AutoDriveDiagonal()); //can we call the specific angle we want? Like C++
+    	addSequential(new AutoDriveDiagonal()); //can we call the specific angle we want? Like C++
     	addSequential(new AutoLift()); 
-    	addSequential(new AutoDriveStraight());
-    	addSequential(new AutoCubeRelease());*/
+    	addSequential(new AutoDriveStraight(RobotMap.autoSwitchSide));
+    	addSequential(new AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

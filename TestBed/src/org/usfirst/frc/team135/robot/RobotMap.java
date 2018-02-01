@@ -13,6 +13,7 @@ public interface RobotMap {
 	public static final int REAR_LEFT_TALON_ID = 12;
 	public static final int FRONT_RIGHT_TALON_ID = 13;
 	public static final int FRONT_LEFT_TALON_ID = 11;
+	public static final int LIFT_TALON_ID = 10; //value is arbitrary
 	
 	public static final int LEFT_SOLENOID_ENGAGE = 3;
 	public static final int RIGHT_SOLENOID_ENGAGE = 0;
@@ -30,8 +31,11 @@ public interface RobotMap {
 	public static final int autoScale = 325;
 	public static final int autoSwitch = 165;
 	public static final int autoLineEnc = 200;
-
+	
+	public static final int autoSwitchSide = 45;
 	public static final int autoScaleSide = 33;
+	
+	public static final int turn90 = 500; //arbitrary number here. make sure to change when relevant
 	
 	
 	

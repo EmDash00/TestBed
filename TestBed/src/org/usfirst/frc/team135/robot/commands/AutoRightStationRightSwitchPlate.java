@@ -1,5 +1,7 @@
 package org.usfirst.frc.team135.robot.commands;
 
+import org.usfirst.frc.team135.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
@@ -9,11 +11,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoRightStationRightSwitchPlate extends CommandGroup {
 
     public AutoRightStationRightSwitchPlate() {
-    	/*addSequential(new AutoDriveStraight());
-    	addSequential(new AutoTurnLeft());
-    	addSequential(new AutoLift());
-    	addSequential(new AutoDriveStraight());
-    	addSequential(new AutoCubeRelease());*/
+    	addSequential(new AutoDriveStraight(RobotMap.autoSwitch));
+    	addSequential(new AutoTurn(-1, 1, RobotMap.turn90));
+    	//addSequential(new AutoLift());
+    	addSequential(new AutoDriveStraight(RobotMap.autoSwitchSide));
+    	//addSequential(new AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

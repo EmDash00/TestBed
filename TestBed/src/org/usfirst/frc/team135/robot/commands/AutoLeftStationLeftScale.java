@@ -9,9 +9,10 @@ public class AutoLeftStationLeftScale extends CommandGroup {
 
     public AutoLeftStationLeftScale() {
     	addSequential(new AutoDriveStraight(RobotMap.autoScale));
-    	addSequential(new AutoLift());
-    	addSequential(new AutoDriveSide(RobotMap.autoScaleSide));
-    	addSequential(new AutoCubeRelease());
+    	//addSequential(new AutoLift());
+    	addSequential(new AutoTurn(1, -1, RobotMap.turn90));
+    	addSequential(new AutoDriveStraight(RobotMap.autoScaleSide));
+    	//addSequential(new AutoCubeRelease());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

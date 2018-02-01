@@ -1,11 +1,13 @@
 package org.usfirst.frc.team135.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
+//1 encoder, 1 talon (two motors), 2 limit switches
 /**
  *
  */
-public class AutoLift extends Command {
+public class AutoLift extends CommandGroup {
 
     public AutoLift() {
         // Use requires() here to declare subsystem dependencies
